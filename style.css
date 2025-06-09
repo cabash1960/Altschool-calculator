@@ -70,6 +70,20 @@ button {
   box-shadow: 0 5px 2px rgba(0, 0, 0, 0.3);
   color: var(--text-color);
   border: none;
+
+  transition: all 0.1s ease-in-out;
+}
+
+button:active:hover {
+  background-color: #4d5499;
+}
+.btn-ops:active:hover {
+  background-color: #f9c16d;
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 5px 2px rgba(0, 0, 0, 0.566);
 }
 
 .btn-num {
@@ -115,6 +129,7 @@ button {
   text-align: right;
 }
 
+/* media query for mobile */
 @media (max-width: 600px) {
   html {
     font-size: 50%;

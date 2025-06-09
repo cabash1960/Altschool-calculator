@@ -11,7 +11,8 @@ let result = "";
 
 btns.forEach((btn) => {
   btn.addEventListener("click", function (e) {
-    e.preventDefault;
+    e.preventDefault();
+
     if (e.target.innerHTML === "=") {
       // condition for the square root calculation
       if (displayInput.value.includes("√")) {
@@ -54,4 +55,41 @@ btns.forEach((btn) => {
 
     // console.log(e.target.innerHTML);
   });
+});
+
+const disallowedKeys = [
+  "Control",
+  "Backspace",
+  "Shift",
+  "Alt",
+  "Meta",
+  "Tab",
+  "CapsLock",
+  "ArrowUp",
+  "ArrowDown",
+  "ArrowLeft",
+  "ArrowRight",
+  "Escape",
+  "Enter",
+];
+
+displayInput.addEventListener("keydown", (e) => {
+  e.preventDefault(); // Call the function
+
+  console.log(e);
+
+  if (e.key === "Enter") {
+    try {
+      const calcResult = eval(result);
+      displayInput.value = calcResult;
+    } catch (err) {
+      displayInput.value = "Error";
+      result = "";
+    }
+  } else if (!disallowedKeys.includes(e.key)) {
+    result += e.key;
+    displayInput.value = result;
+  }
+
+  console.log(result);
 });
