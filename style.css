@@ -33,6 +33,10 @@ body {
   /* max-width: 40rem; */
   padding: 3.2rem;
   position: relative;
+  flex: 1;
+}
+.off {
+  opacity: 0;
 }
 /* display input */
 .displaySec {
@@ -132,10 +136,13 @@ body {
 
 .aside {
   display: flex;
+  overflow: scroll;
+  /* margin: 2.4rem; */
 }
 
 .history {
   opacity: 0;
+  display: none;
   padding: 2rem;
   background-color: var(--bg-color);
   width: 20rem;
@@ -144,7 +151,7 @@ body {
 
 /* the history section  */
 .history-text {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   color: var(--text-color);
   margin-bottom: 1.6rem;
 }
@@ -178,8 +185,20 @@ body {
   background-color: #f9c16d;
 }
 /* media query for mobile */
-@media (max-width: 600px) {
+@media (max-width: 770px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 670px) {
   html {
     font-size: 50%;
+  }
+}
+
+@media (max-width: 414px) {
+  html {
+    font-size: 37.5%;
   }
 }
