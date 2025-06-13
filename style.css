@@ -32,6 +32,7 @@ body {
   background-color: var(--bg-color);
   /* max-width: 40rem; */
   padding: 3.2rem;
+  position: relative;
 }
 /* display input */
 .displaySec {
@@ -64,7 +65,7 @@ body {
 }
 
 /* style buttons */
-button {
+.btn {
   font-size: 3.2rem;
   cursor: pointer;
   box-shadow: 0 5px 2px rgba(0, 0, 0, 0.3);
@@ -74,14 +75,14 @@ button {
   transition: all 0.1s ease-in-out;
 }
 
-button:active:hover {
+.btn:active:hover {
   background-color: #4d5499;
 }
 .btn-ops:active:hover {
   background-color: #f9c16d;
 }
 
-button:active {
+.btn:active {
   transform: translateY(2px);
   box-shadow: 0 5px 2px rgba(0, 0, 0, 0.566);
 }
@@ -110,7 +111,7 @@ button:active {
   border-radius: 4.8rem;
   background-color: var(--ops-color);
 }
-
+/* display input */
 .display-input {
   text-align: right;
   font-size: 3.6rem;
@@ -129,6 +130,53 @@ button:active {
   text-align: right;
 }
 
+.aside {
+  display: flex;
+}
+
+.history {
+  opacity: 0;
+  padding: 2rem;
+  background-color: var(--bg-color);
+  width: 20rem;
+  transition: all 0.3s ease;
+}
+
+/* the history section  */
+.history-text {
+  font-size: 2.4rem;
+  color: var(--text-color);
+  margin-bottom: 1.6rem;
+}
+.history-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  color: var(--ops-color);
+  font-size: 1.6rem;
+}
+.history.show {
+  opacity: 100;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.history-btn {
+  height: auto;
+  width: 2rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: #000000;
+  background-color: var(--ops-color);
+  border-radius: 50%;
+}
+.history-btn:active:hover {
+  background-color: #f9c16d;
+}
 /* media query for mobile */
 @media (max-width: 600px) {
   html {

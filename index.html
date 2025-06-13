@@ -8,41 +8,66 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="container">
-        <!-- display input -->
-        <div class="displaySec">
-          <input type="text" placeholder="0" class="display-input" />
+      <div class="aside">
+        <div class="container">
+          <button class="history-btns">
+            <svg
+              class="history-btn"
+              xmlns="http://www.w3.org/2000/svg"
+              width="200"
+              height="200"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill="currentColor"
+                d="M9 6v5h.06l2.48 2.47l1.41-1.41L11 10.11V6z"
+              />
+              <path
+                fill="currentColor"
+                d="M10 1a9 9 0 0 0-7.85 13.35L.5 16H6v-5.5l-2.38 2.38A7 7 0 1 1 10 17v2a9 9 0 0 0 0-18z"
+              />
+            </svg>
+          </button>
+          <!-- display input -->
+          <div class="displaySec">
+            <input type="text" placeholder="0" class="display-input" />
+          </div>
+          <div class="buttonSec">
+            <!-- number button section -->
+            <div class="numberSec">
+              <button class="btn-num eff btn">(</button>
+              <button class="btn-num eff btn">)</button>
+              <button class="btn-num eff btn">&radic;</button>
+              <button class="btn-num eff btn">1</button>
+              <button class="btn-num eff btn">2</button>
+              <button class="btn-num eff btn">3</button>
+              <button class="btn-num eff btn">4</button>
+              <button class="btn-num eff btn">5</button>
+              <button class="btn-num eff btn">6</button>
+              <button class="btn-num eff btn">7</button>
+              <button class="btn-num eff btn">8</button>
+              <button class="btn-num eff btn">9</button>
+              <button class="btn-num eff btn">.</button>
+              <button class="btn-num eff btn">0</button>
+              <button class="btn-num eff btn del">DEL</button>
+            </div>
+            <!-- operation button section -->
+            <div class="opSec">
+              <button class="btn-ops clear btn">AC</button>
+              <button class="btn-ops btn">x</button>
+              <button class="btn-ops btn">&divide;</button>
+              <button class="btn-ops btn">+</button>
+              <button class="btn-ops btn">-</button>
+              <button class="btn-ops btn">%</button>
+              <button class="btn-ops btn">^</button>
+              <button class="btn-ops btn equal">&equals;</button>
+            </div>
+          </div>
         </div>
-        <div class="buttonSec">
-          <!-- number button section -->
-          <div class="numberSec">
-            <button class="btn-num eff">(</button>
-            <button class="btn-num eff">)</button>
-            <button class="btn-num eff">&radic;</button>
-            <button class="btn-num eff">1</button>
-            <button class="btn-num eff">2</button>
-            <button class="btn-num eff">3</button>
-            <button class="btn-num eff">4</button>
-            <button class="btn-num eff">5</button>
-            <button class="btn-num eff">6</button>
-            <button class="btn-num eff">7</button>
-            <button class="btn-num eff">8</button>
-            <button class="btn-num eff">9</button>
-            <button class="btn-num eff">.</button>
-            <button class="btn-num eff">0</button>
-            <button class="btn-num eff del">DEL</button>
-          </div>
-          <!-- operation button section -->
-          <div class="opSec">
-            <button class="btn-ops clear">AC</button>
-            <button class="btn-ops">x</button>
-            <button class="btn-ops">&divide;</button>
-            <button class="btn-ops">+</button>
-            <button class="btn-ops">-</button>
-            <button class="btn-ops">%</button>
-            <button class="btn-ops">^</button>
-            <button class="btn-ops equal">&equals;</button>
-          </div>
+        <!-- history list  -->
+        <div class="history">
+          <p class="history-text">History</p>
+          <ul class="history-list"></ul>
         </div>
       </div>
     </div>

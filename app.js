@@ -1,10 +1,18 @@
 "use strict";
-
+const history = document.querySelector(".history");
+const historyList = document.querySelector(".history-list");
+const historyBtn = document.querySelector(".history-btns");
 const del = document.querySelector(".del");
 const displayInput = document.querySelector(".display-input");
-const btns = document.querySelectorAll("button");
+const btns = document.querySelectorAll(".btn");
 
 del.style.backgroundColor = "red";
+
+//history button
+historyBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  history.classList.toggle("show");
+});
 
 // console.log(btns);
 let result = "";
@@ -24,8 +32,19 @@ btns.forEach((btn) => {
         result = Math.sqrt(sqr);
         displayInput.value = result;
       } else {
-        const calcResult = eval(result);
-        displayInput.value = calcResult;
+        try {
+          const calcResult = eval(result);
+          displayInput.value = calcResult;
+        } catch (err) {
+          displayInput.value = "Error";
+        }
+
+        //adding the input history
+        if (displayInput.value === "Error") {
+          return;
+        } else {
+          getHistory();
+        }
       }
     } else if (e.target.innerHTML === "DEL") {
       result = result.slice(0, -1);
@@ -77,6 +96,7 @@ displayInput.addEventListener("keydown", (e) => {
   e.preventDefault(); // Call the function
 
   console.log(e);
+  // if the enter button is clicked , utilise a promise to catch the error and display the result
 
   if (e.key === "Enter") {
     try {
@@ -93,3 +113,16 @@ displayInput.addEventListener("keydown", (e) => {
 
   console.log(result);
 });
+
+function getHistory() {
+  //return nothing if there is no value inputed
+  if (displayInput.value === "Error") {
+    return;
+  }
+
+  const inputText = result;
+
+  const li = document.createElement("li");
+  li.textContent = inputText;
+  historyList.appendChild(li);
+}
