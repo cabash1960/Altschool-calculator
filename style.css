@@ -168,21 +168,28 @@ body {
   transition: all 0.3s ease;
   display: block;
 }
-
+.history-btns {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
 .history-btn {
   height: auto;
   width: 2rem;
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
+
   padding: 0.5rem;
   cursor: pointer;
   color: #000000;
   background-color: var(--ops-color);
   border-radius: 50%;
+  border: none;
+  outline: none;
 }
 .history-btn:active:hover {
   background-color: #f9c16d;
+}
+.history-btn:focus {
+  outline: none;
 }
 /* media query for mobile */
 @media (max-width: 770px) {

@@ -1,7 +1,7 @@
 "use strict";
 const history = document.querySelector(".history");
 const historyList = document.querySelector(".history-list");
-const historyBtn = document.querySelector(".history-btns");
+const historyBtn = document.querySelector(".history-btn");
 const del = document.querySelector(".del");
 const displayInput = document.querySelector(".display-input");
 const btns = document.querySelectorAll(".btn");
